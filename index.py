@@ -39,12 +39,7 @@ def undoable(engine: StenoEngine, argument: str):
 
 
 def undo_with(engine: StenoEngine, argument: str):
-    translator = engine._translator
-
-    translations: list[Translation] = translator.get_state().translations
-
-    newest_translation = translations[-1]
-    newest_translation.replaced = [Translation([Stroke("*")], argument)]
+    engine._translator.get_state().translations[-1].replaced = [Translation([Stroke("*")], argument)]
         
 
 def clrtrans(engine: StenoEngine, argument: str):
