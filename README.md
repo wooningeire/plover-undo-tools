@@ -31,3 +31,7 @@ Causes additional text or commands to be translated when a given translation is 
 Some example use cases:
 * Undoing `{plover:solo_dict}` command calls:<br />`"PHRAU": "{plover:undo_with:\\{plover:end_solo_dict\\}}{plover:solo_dict:+raw-solo-dict.json}{^ ^}{MODE:SET_SPACE:/}"`
 * Undoing movement strokes:<br />`"STPH-G": "{#right}{^}{plover:undo_with:\\{#left\\}}"`
+
+
+#### Edge case behavior
+* (TODO?) The number of undos needed to erase a multistroke translation that uses this command may not match the number of strokes in the entry. If this command is set to produce text, the entire translation is replaced with text that can be erased with just 1 stroke.
